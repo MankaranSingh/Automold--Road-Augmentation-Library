@@ -84,12 +84,12 @@ def visualize(image_array, column=1, v_gap=0.1, h_gap=0.1, fig_size=(20,20), col
 #         pad=0.4, w_pad=0.5, h_pad=1.0
 
 
-def load_images(path):
+def load_images(path, dim=(1280, 720)):
     image_list=[]
     images= glob.glob(path)
     for index in range(len(images)):
         image= cv2.cvtColor(cv2.imread(images[index]),cv2.COLOR_BGR2RGB)
-        image_list.append(cv2.resize(image,(1280,720)))
+        image_list.append(cv2.resize(image,dim))
      
     return image_list
 
